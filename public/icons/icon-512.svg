@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="MediCore icon">
+  <rect width="512" height="512" rx="96" fill="#0A2540" />
+  <path d="M128 256h78l28-58 50 116 34-74h78" fill="none" stroke="#06D6A0" stroke-linecap="round" stroke-linejoin="round" stroke-width="24" />
+  <circle cx="256" cy="256" r="196" fill="none" stroke="#0096C7" stroke-width="10" opacity="0.6" />
+</svg>
