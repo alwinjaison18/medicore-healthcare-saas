@@ -89,9 +89,21 @@ MediCore is a frontend-first healthcare operations platform built to simulate re
 
 ## Firebase Setup
 
-Firebase is currently configured in src/services/firebase.ts.
+Firebase config is loaded from Vite environment variables.
 
-For production deployment, move Firebase config to environment variables and inject through Vite env handling.
+1. Copy .env.example to .env
+2. Fill the Firebase values in .env
+3. Restart the dev server
+
+Required variables:
+
+- VITE_FIREBASE_API_KEY
+- VITE_FIREBASE_AUTH_DOMAIN
+- VITE_FIREBASE_PROJECT_ID
+- VITE_FIREBASE_STORAGE_BUCKET
+- VITE_FIREBASE_MESSAGING_SENDER_ID
+- VITE_FIREBASE_APP_ID
+- VITE_FIREBASE_MEASUREMENT_ID
 
 ## Deployment
 
@@ -117,7 +129,6 @@ Live URL: Add deployed link here
 ## Current Known Gaps
 
 - ESLint currently reports a few hook rule violations that should be cleaned before final evaluation.
-- Firebase credentials are hardcoded in source and should be moved to environment variables before production release.
 - Micro-frontend architecture is not included.
 
 ## Build Status Snapshot

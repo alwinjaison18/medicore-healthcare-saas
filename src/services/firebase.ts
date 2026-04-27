@@ -11,14 +11,25 @@ import {
 } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCPI7-9ctpVzp9if1U2KjM6qwQYQKOmnx4",
-  authDomain: "medicore-df32d.firebaseapp.com",
-  projectId: "medicore-df32d",
-  storageBucket: "medicore-df32d.firebasestorage.app",
-  messagingSenderId: "333237608820",
-  appId: "1:333237608820:web:3681a2a0fdf5baf2264c21",
-  measurementId: "G-430GN91R4F",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
+  measurementId: import.meta.env.VITE_FIREBASE_MEASUREMENT_ID,
 };
+
+if (
+  !firebaseConfig.apiKey ||
+  !firebaseConfig.authDomain ||
+  !firebaseConfig.projectId ||
+  !firebaseConfig.appId
+) {
+  throw new Error(
+    "Missing Firebase environment variables. Configure VITE_FIREBASE_* values in your .env file.",
+  );
+}
 
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
